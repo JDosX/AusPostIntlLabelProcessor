@@ -1,4 +1,5 @@
-﻿using PdfSharpCore.Drawing;
+﻿using System.Diagnostics;
+using PdfSharpCore.Drawing;
 using PdfSharpCore.Pdf;
 using PdfSharpCore.Pdf.IO;
 
@@ -30,6 +31,18 @@ namespace PdfProcessor {
       }
 
       document.Save(writePath);
+
+      // TODO: Not sure if this is the best way to open in default application, or if it's cross-platform.
+      using (Process fileOpener = new Process()) {
+        fileOpener.StartInfo.FileName = "explorer";
+        fileOpener.StartInfo.Arguments = string.Format("\"{0}\"", writePath);
+        fileOpener.Start();
+      }
     }
+
+/*    private static string ExpandPathArg(string arg) {
+      string expandedArg = Environment.ExpandEnvironmentVariables(arg);
+      return Path.GetFullPath()
+    }*/
   }
 }
