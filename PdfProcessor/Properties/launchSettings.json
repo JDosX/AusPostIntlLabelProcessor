@@ -2,7 +2,7 @@
   "profiles": {
     "PdfProcessor": {
       "commandName": "Project",
-      "commandLineArgs": "D:\\Users\\Jayden\\Downloads\\cleon_postage_label.pdf D:\\Users\\Jayden\\Downloads\\PROCESSED_cleon_postage_label.pdf"
+      "commandLineArgs": "D:\\Users\\Jayden\\Downloads\\cleon_postage_label.pdf"
     }
   }
 }
